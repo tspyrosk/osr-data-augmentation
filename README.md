@@ -29,6 +29,31 @@ python >= 3.7,
 keras >= 2.6.0,
 torch >= 1.11.0
 
+### StyleGAN Training
+
+The following command were used to train the StyleGAN model for the three classes. Please note that the first run for the "good" class produces a base pre-trained network that is further fine-tuned for all three classes.
+
+```
+#GOOD
+!python stylegan3/train.py --outdir="./training-runs" --cfg=stylegan3-t --data="./shavershellgoodfull.zip" \
+    --gpus=1 --batch=4 --gamma=8 --kimg=80 --freezed=10 --snap=5 --cbase=16384 \
+    --resume=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-t-ffhqu-256x256.pkl
+
+# GOOD 2nd run
+!python stylegan3/train.py --outdir="./training-runs" --cfg=stylegan3-t --data="./shavershellgoodfull.zip" \
+    --gpus=1 --batch=4 --gamma=8 --kimg=40 --freezed=10 --snap=5 --cbase=16384 \
+    --resume="../input/network-good-80iters/network-good-80iters.pkl"
+
+#DOUBLE PRINT
+!python stylegan3/train.py --outdir="./training-runs" --cfg=stylegan3-t --data="./shavershelldoubleprintfull.zip" \
+    --gpus=1 --batch=4 --gamma=8 --kimg=60 --freezed=10 --snap=5 --cbase=16384 \
+    --resume="../input/network-good-80iters/network-good-80iters.pkl"
+   
+#INTERRUPTED
+!python stylegan3/train.py --outdir="./training-runs" --cfg=stylegan3-t --data="./shavershellinterruptedfull.zip" \
+    --gpus=1 --batch=4 --gamma=8 --kimg=100 --freezed=10 --snap=5 --cbase=16384 \
+    --resume="../input/network-good-80iters/network-good-80iters.pkl"
+
 ### Links:
 
 Code from the following repositories was used:
