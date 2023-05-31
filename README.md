@@ -53,7 +53,7 @@ The following command were used to train the StyleGAN model for the three classe
 !python stylegan3/train.py --outdir="./training-runs" --cfg=stylegan3-t --data="./shavershellinterruptedfull.zip" \
     --gpus=1 --batch=4 --gamma=8 --kimg=100 --freezed=10 --snap=5 --cbase=16384 \
     --resume="../input/network-good-80iters/network-good-80iters.pkl"
-
+```
 ### Links:
 
 Code from the following repositories was used:
