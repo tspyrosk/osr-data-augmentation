@@ -9,6 +9,8 @@ sefa-shaver-generate-data.ipynb --> sefa-shaver-filter-data.ipynb --> sefa-shave
 
 The three scripts should be run in sequence and the output of each script should be placed in the folder expected by the next as described in the `Inputs` section.
 
+`res_logs_30_runs.log` shows the consolidated result logs that were presented in the paper over 30 independently seeded runs.
+
 ### Inputs
 
 `input/shaver-shell-full-all-classes-v2`: should contain the original dataset with three classes good, interrupted and double print
